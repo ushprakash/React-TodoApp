@@ -55,7 +55,7 @@ button {
   padding: 5px 8px;
   cursor: pointer;
   height: 25px;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 button:hover,
 button:active {
@@ -67,7 +67,6 @@ button:active {
 input[type="text"] {
   font-size: 16px;
   font-family: sans-serif;
-  text-transform: capitalize;
 }
 .todo {
   display: flex;
@@ -79,6 +78,11 @@ input[type="text"] {
   transform: scale(1) translateY(1px);
   margin: 0 16px 0 0;
   cursor: pointer;
+}
+
+.todo-text .complete {
+  text-decoration: line-through;
+  opacity: 0.4;
 }
 .todo-text input {
   padding: 4px;
@@ -99,11 +103,13 @@ input[type="text"] {
   border: none;
   outline: none;
   height: 22px;
+  margin-top: 0px;
 }
 .todo-actions .btn2 {
   border: none;
   outline: none;
   height: 22px;
+  margin-top: 0px;
 }
 
 .todo-text #edit {

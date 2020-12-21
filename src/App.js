@@ -78,6 +78,7 @@ const App = () => {
               checked={todo.completed}
               onChange={() => toggleComplete(todo.id)}
             />
+             
             {todo.id === todoEditing ?
 
             (
@@ -88,7 +89,9 @@ const App = () => {
                 onChange={(e) => setEditingText(e.target.value)}
               />
             ) : (
-              <div>{todo.text}</div>
+              <div key={todo.id} onClick={() => toggleComplete(todo.id)} className={todo.completed? 'complete':'incomplete'} >
+        {todo.text}
+      </div>
             )
             
       }
