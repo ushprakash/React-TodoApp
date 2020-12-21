@@ -67,7 +67,7 @@ const App = () => {
           onChange={(e) => setTodo(e.target.value)}
           value={todo}
         />
-        <button type="submit">Add Todo</button>
+        <button type="submit">Add</button>
       </form>
       {todos.map((todo) => (
         <div key={todo.id} className="todo">
