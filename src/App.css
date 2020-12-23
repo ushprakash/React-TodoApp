@@ -96,6 +96,8 @@ input[type="text"] {
   color: white;
   border: none;
   outline: none;
+
+  word-break: ;
 }
 
 .todo-actions .btn1 {
@@ -128,5 +130,15 @@ input[type="text"] {
     width: auto;
     height: auto;
     overflow: auto;
+  }
+}
+
+@media (max-width: 991px) {
+  .todo-text {
+    word-break: break-all;
+    overflow-wrap: break-word;
+  }
+  .todo-actions {
+    max-width: 40px;
   }
 }

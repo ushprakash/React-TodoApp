@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useRef} from "react";
 import "./App.css";
 
 const App = () => {
@@ -6,7 +6,13 @@ const App = () => {
   const [todo, setTodo] = React.useState("");
   const [todoEditing, setTodoEditing] = React.useState(null);
   const [editingText, setEditingText] = React.useState("");
-
+const inputRef=useRef(null);
+React.useEffect(() => {
+  if (todoEditing) {
+     inputRef.current.focus();
+    }
+   }, [todoEditing]);
+  
   React.useEffect(() => {
     const json = localStorage.getItem("todos");
     const loadedTodos = JSON.parse(json);
@@ -63,6 +69,7 @@ const App = () => {
       <h1>Todo List</h1>
       <form onSubmit={handleSubmit}>
         <input
+        ref={inputRef}
           type="text"
           onChange={(e) => setTodo(e.target.value)}
           value={todo}
@@ -84,9 +91,12 @@ const App = () => {
             (
               
                     <input
+                    ref={inputRef}
                 type="text"
                 id="edit"
+                
                 onChange={(e) => setEditingText(e.target.value)}
+              defaultValue={todo.text}
               />
             ) : (
               <div key={todo.id} onClick={() => toggleComplete(todo.id)} className={todo.completed? 'complete':'incomplete'} >
