@@ -88,6 +88,7 @@ input[type="text"] {
   padding: 4px;
 }
 .todo-text {
+  width: 50%;
   font-size: 19px;
   line-height: 20px;
   margin-bottom: 3px;
@@ -97,7 +98,7 @@ input[type="text"] {
   border: none;
   outline: none;
 
-  word-break: ;
+  word-break: break-all;
 }
 
 .todo-actions .btn1 {
@@ -123,22 +124,20 @@ input[type="text"] {
   width: 200px;
   margin-top: 2px;
 }
-@media (max-width: 991px) {
+@media (max-width: 1300px) {
   #todo-list,
   form,
   .todo {
     width: auto;
     height: auto;
     overflow: auto;
+
+    word-wrap: break-word;
   }
 }
 
-@media (max-width: 991px) {
+@media (max-width: 1300px) {
   .todo-text {
     word-break: break-all;
-    overflow-wrap: break-word;
-  }
-  .todo-actions {
-    max-width: 40px;
   }
 }
