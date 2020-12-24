@@ -56,7 +56,9 @@ React.useEffect(() => {
   function submitEdits(id) {
     const updatedTodos = [...todos].map((todo) => {
       if (todo.id === id) {
+       
         todo.text = editingText;
+        
       }
       return todo;
     });
@@ -69,7 +71,7 @@ React.useEffect(() => {
       <h1>Todo List</h1>
       <form onSubmit={handleSubmit}>
         <input
-        ref={inputRef}
+       
           type="text"
           onChange={(e) => setTodo(e.target.value)}
           value={todo}
@@ -89,12 +91,12 @@ React.useEffect(() => {
             {todo.id === todoEditing ?
 
             (
-              
-                    <input
+              <input
                     ref={inputRef}
                 type="text"
                 id="edit"
                 
+               
                 onChange={(e) => setEditingText(e.target.value)}
               defaultValue={todo.text}
               />
@@ -108,7 +110,7 @@ React.useEffect(() => {
           </div>
           <div className="todo-actions">
             {todo.id === todoEditing ? (
-              <button  className="btn1" onClick={() => submitEdits(todo.id)}>Submit Edits</button>
+              <button  className="btn1" onClick={() => submitEdits(todo.id)}>Add</button>
             ) : (
               <button className="btn1" onClick={() => setTodoEditing(todo.id)}>Edit</button>
             )}

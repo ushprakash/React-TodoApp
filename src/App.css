@@ -38,6 +38,7 @@ form input {
   border: none;
   outline: none;
   color: rgb(241, 67, 67);
+  width: 60%;
 }
 .todo {
   display: flex;
@@ -88,7 +89,6 @@ input[type="text"] {
   padding: 4px;
 }
 .todo-text {
-  width: 50%;
   font-size: 19px;
   line-height: 20px;
   margin-bottom: 3px;
@@ -97,8 +97,7 @@ input[type="text"] {
   color: white;
   border: none;
   outline: none;
-
-  word-break: break-all;
+  width: 50%;
 }
 
 .todo-actions .btn1 {
@@ -121,8 +120,9 @@ input[type="text"] {
   border-radius: 10px;
   border: none;
   outline: none;
-  width: 200px;
+  width: 70%;
   margin-top: 2px;
+  word-break: break-all;
 }
 @media (max-width: 1300px) {
   #todo-list,
